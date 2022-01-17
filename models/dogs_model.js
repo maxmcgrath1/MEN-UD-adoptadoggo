@@ -57,6 +57,57 @@ class Collection {
     
         return callBack(error, item);
     }
+
+create( data, callBack ) {
+    if (!data) return console.log("missing data in first argument");
+
+    if (typeof callBack !== "function") {
+        return console.log("missing function in second argument");
+    }
+
+    let error, newItem;
+
+    const isEmpty = Object.keys(data).every(field => data[field] === "");
+
+    if (isEmpty) {
+        error = { message: `you have empty fields` };
+    } else {
+        
+        newItem = new this.#Model( data, this.#generateId());
+
+        this.#items[newItem.id] = newItem;
+    }
+
+    return callBack(error, newItem);
+};
+
+findByIdAndDelete( itemId, callBack ) {
+    let error = null;
+    const item = this.#items[itemId]
+    const isDeleted = delete this.#items[itemId];
+
+    if ( !isDeleted ) {
+        error = { message: `item with id "${itemId}" can't be found` };
+    }
+
+    return callBack(error, item);
+}
+
+findByIdAndUpdate( itemId, data, callBack ) {
+    let error = null;
+    const item = this.#items[itemId];
+
+    if (!item) {
+        error = { message: `item can't be found` };
+    } else {
+        this.#items[itemId] = {
+            ...item,
+            ...data
+        }
+    }
+
+    return callBack(error, this.#items[itemId]);
+}
 };
 
 class Dogs {
@@ -67,6 +118,8 @@ class Dogs {
         this.image = data.image;
     }
 }
+
+
 
 // at the bottom 
 module.exports = new Collection(Dogs, [
