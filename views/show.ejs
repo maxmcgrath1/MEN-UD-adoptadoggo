@@ -15,7 +15,7 @@
     <script src="/scripts/bulma.js" defer></script>
     <script src="/scripts/main.js" defer></script>
 
-    <title>Adopt This Dog!</title>
+    <title>Adopt A Dog!</title>
 </head>
 
 <body class="has-navbar-fixed-top">
@@ -38,7 +38,7 @@
     </nav>
     <section class="hero is-medium has-background-light">
         <div class="hero-body">
-            <h1 class="title">Dog Show Page</h1>
+            <h1 class="title">Adopt A Dog!</h1>
         </div>
     </section>
 
@@ -56,12 +56,12 @@
                     <small>Breed: <%= dog.breed %></small>
                     <div class="field mt-5 is-grouped">
                         <div class="control">
-                            <a class="button is-info" href="/dogs/<%= dog.id %>/edit">Edit Dog
+                            <a class="button is-info" href="/dogs/<%= dog.id %>/edit">Edit This Entry
                             </a>
                         </div>
                         <p class="control">
                         <form action="/dogs/<%= dog.id %>?_method=DELETE" method="POST">
-                            <input class="button is-danger" type="submit" value="Delete Dog" />
+                            <input class="button is-danger" type="submit" value="Delete Entry: I've Been Adopted!" />
                         </form>
                         </p>
                     </div>
