@@ -30,7 +30,7 @@
         aria-label="main navigation"
         >
             <div class="navbar-brand">
-                <a class="navbar-item" href="/products"> All Products </a>
+                <a class="navbar-item" href="/dogs"> All Dogs </a>
 
                 <a
                     role="button"
@@ -45,37 +45,37 @@
                 </a>
             </div>
                 <div class="navbar-menu navbar-end">
-                    <a class="navbar-item" href="/products/new"> New Product </a>
+                    <a class="navbar-item" href="/dogs/new"> New Dog </a>
                 </div>
             </nav>
         </nav>
 
         <section class="hero is-medium has-background-light">
             <div class="hero-body">
-                <p class="title">All Products</p>
+                <p class="title">All Dogs</p>
             </div>
         </section>
 
         <main class="container is-max-widescreen">
             <div class="columns is-multiline p-5">
-                <% for(let idx = 0; idx < products.length; idx++){ %> 
-                    <% const product = products[idx] %>
+                <% for(let idx = 0; idx < dogs.length; idx++){ %> 
+                    <% const dog = dogs[idx] %>
 
             <div class="column is-one-third">
                 <article class="card">
                     <section class="card-image">
                         <figure class="image is-3by3">
-                            <img src="<%= product.image %>" alt="Placeholder image" />
+                            <img src="<%= dog.image %>" alt="Placeholder image" />
                         </figure>
             </div>
             </section>
                             <div class="card-content">
                                 <div class="content">
                                     <h3>
-                                    <a href="/products/<%= product.id %>"><%= product.name %> </a>
+                                    <a href="/dogs/<%= dog.id %>"><%= dog.name %> </a>
                                     </h3>
 
-                                    <p>$<%= product.price %></p>
+                                    <p>$<%= dog.price %></p>
                                 </div>
                             </div>
                         </article>

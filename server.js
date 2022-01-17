@@ -1,17 +1,12 @@
-// Any imports
 const express = require('express');
 const app = express();
 const dogsController = require('./controllers/dogs_controller.js')
 const methodOverride = require('method-override');
 
-// const allProducts = products.find();
-// My variables
 const PORT = 4000;
 
-// Set our app
 app.set('view engine', 'ejs');
 
-// App.use for adding 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.use(methodOverride('_method'))
