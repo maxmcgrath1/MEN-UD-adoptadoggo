@@ -1,5 +1,22 @@
 {
   "dependencies": {
-    "express": "^4.17.2"
-  }
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "method-override": "^3.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "update-delete-lab",
+  "description": "## First Step",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/maxmcgrath/Update-delete-lab.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
