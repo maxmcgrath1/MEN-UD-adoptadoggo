@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.get("/", function(req, res) {
-    res.send("This is working! :)")
+    res.send("I am the internet and I am doing things!")
 })
         
 app.get("/*", (req, res) => {
