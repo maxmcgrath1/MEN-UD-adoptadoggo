@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css"
+        />
+        <link rel="stylesheet" href="/styles/main.css" />
+
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"
+        ></script>
+
+        <script src="/scripts/bulma.js" defer></script>
+        <script src="/scripts/main.js" defer></script>
+
+        <title>Add A Dog</title>
+    </head>
+    <body class="has-navbar-fixed-top">
+        <!-- https://bulma.io/documentation/components/navbar/#fixed-navbar -->
+        <nav
+            class="navbar is-dark is-fixed-top"
+            role="navigation"
+            aria-label="main navigation"
+        >
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/dogs"> All Dogs </a>
+
+            <a
+                role="button"
+                class="navbar-burger"
+                aria-label="menu"
+                aria-expanded="false"
+                data-target="navbarBasicExample"
+            >
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        
+            <div class="navbar-menu navbar-end">
+                <a class="navbar-item" href="/dogs/new"> New Dog </a>
+            </div>        
+        </nav>
+        <section class="hero-is-medium has-background-light">
+            <div class="hero-body">
+                <h1 class="title">Add A Dog</h1>
+            </div>
+        </section>
+            <form action="/dogs" method="POST">
+                <div class="field">
+                    <label class="label">Dog's Name</label>
+                    <div class="control">
+                        <input
+                            class="input"
+                            type="text"
+                            placeholder="Enter Dog's name here"
+                            name="name"
+                        />
+                    </div>
+                </div>
+        
+                <div class="field">
+                    <label class="label">Breed of Dog</label>
+                    <div class="control">
+                        <input class="input" type="text" placeholder="Breed" name="breed" />
+                    </div>
+                </div>
+        
+                <div class="field">
+                    <label class="label">Picture of Dog</label>
+                    <div class="control">
+                        <input
+                            class="input"
+                            type="text"
+                            placeholder="http://"
+                            name="image"
+                        />
+                    </div>
+                </div>
+        
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button class="button is-info">Add This Dog</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </body>
+</html>
